@@ -14,7 +14,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run the application
-FROM eclipse-temurin:17-jre-slim
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 # Copy JAR file from build stage
