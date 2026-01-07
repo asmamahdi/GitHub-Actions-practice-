@@ -1,0 +1,27 @@
+# Copy this file to terraform.tfvars and update with your values
+# terraform.tfvars is in .gitignore and should not be committed
+
+# AWS region (us-east-1 is typically cheapest)
+aws_region = "us-east-1"
+
+# Project name for resource naming
+project_name = "cicd-learning"
+
+# Your AWS Key Pair name (must exist in AWS Console → EC2 → Key Pairs)
+# Create one if you don't have it: AWS Console → EC2 → Key Pairs → Create
+key_pair_name = "my-key-pair"
+
+# Your public IP address (find at https://whatismyipaddress.com)
+# Format: X.X.X.X/32 (e.g., "203.0.113.0/32")
+# This restricts SSH access to your IP only for security
+my_ip = "YOUR.IP.ADDRESS.HERE/32"
+
+# CIDR blocks allowed to access Jenkins web UI
+# For learning, you can use ["0.0.0.0/0"] to allow from anywhere
+# For production, restrict to specific IPs: ["YOUR.IP.ADDRESS.HERE/32"]
+allowed_cidr_blocks = ["0.0.0.0/0"]
+
+# AMI ID (leave empty to use latest Amazon Linux 2)
+# ami_id = "ami-0c55b159cbfafe1f0"
+
+

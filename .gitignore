@@ -1,0 +1,58 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+
+# Terraform variables (may contain sensitive data)
+terraform/**/terraform.tfvars
+!terraform/**/terraform.tfvars.example
+
+# SSH Keys
+*.pem
+*.ppk
+*.key
+id_rsa*
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Java
+target/
+*.class
+*.jar
+!pom.xml
+.mvn/
+mvnw
+mvnw.cmd
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
