@@ -18,6 +18,9 @@ jobs:
   build-and-test:
     name: Build and Test
     runs-on: ubuntu-latest
+    permissions:
+      checks: write   # Needed for publishing test results
+      contents: read  # Basic contents access
     
     steps:
       - name: Checkout code
