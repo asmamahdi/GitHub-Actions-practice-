@@ -1,0 +1,45 @@
+name: Simple CI/CD Pipeline
+
+# This is a SIMPLER version to start with
+# Use this if you want to get started quickly without all the advanced features
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Simple Build and Test Job
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build application
+        run: mvn clean compile
+
+      - name: Run tests
+        run: mvn test
+
+      - name: Package application
+        run: mvn package -DskipTests
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-app
+          path: target/java-app-1.0.jar
+
+
+
